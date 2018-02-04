@@ -1,0 +1,14 @@
+C:\Users\User\documents\visual studio 2017\Projects\WestrenBank\WestrenBank\bin\Debug\WestrenBank.exe.config
+C:\Users\User\documents\visual studio 2017\Projects\WestrenBank\WestrenBank\bin\Debug\WestrenBank.exe
+C:\Users\User\documents\visual studio 2017\Projects\WestrenBank\WestrenBank\bin\Debug\WestrenBank.pdb
+C:\Users\User\documents\visual studio 2017\Projects\WestrenBank\WestrenBank\obj\Debug\WestrenBank.csprojResolveAssemblyReference.cache
+C:\Users\User\documents\visual studio 2017\Projects\WestrenBank\WestrenBank\obj\Debug\WestrenBank.AddAccount.resources
+C:\Users\User\documents\visual studio 2017\Projects\WestrenBank\WestrenBank\obj\Debug\WestrenBank.AddClient.resources
+C:\Users\User\documents\visual studio 2017\Projects\WestrenBank\WestrenBank\obj\Debug\WestrenBank.MainPage.resources
+C:\Users\User\documents\visual studio 2017\Projects\WestrenBank\WestrenBank\obj\Debug\WestrenBank.Properties.Resources.resources
+C:\Users\User\documents\visual studio 2017\Projects\WestrenBank\WestrenBank\obj\Debug\WestrenBank.WatchAccount.resources
+C:\Users\User\documents\visual studio 2017\Projects\WestrenBank\WestrenBank\obj\Debug\WestrenBank.csproj.GenerateResource.Cache
+C:\Users\User\documents\visual studio 2017\Projects\WestrenBank\WestrenBank\obj\Debug\WestrenBank.csproj.CoreCompileInputs.cache
+C:\Users\User\documents\visual studio 2017\Projects\WestrenBank\WestrenBank\obj\Debug\WestrenBank.exe
+C:\Users\User\documents\visual studio 2017\Projects\WestrenBank\WestrenBank\obj\Debug\WestrenBank.pdb
+C:\Users\User\Documents\Visual Studio 2017\Projects\WestrenBank\WestrenBank\obj\Debug\WestrenBank.AddClientsAccounts.resources
