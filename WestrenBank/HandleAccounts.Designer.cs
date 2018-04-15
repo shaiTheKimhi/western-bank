@@ -41,6 +41,7 @@
             this.button3.TabIndex = 6;
             this.button3.Text = "add client";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click_1);
             // 
             // button2
             // 
@@ -50,6 +51,7 @@
             this.button2.TabIndex = 5;
             this.button2.Text = "watch accounts";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
             // button1
             // 
@@ -59,6 +61,7 @@
             this.button1.TabIndex = 4;
             this.button1.Text = "add account";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // HandleAccounts
             // 

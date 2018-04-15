@@ -12,6 +12,7 @@ namespace WestrenBank
 {
     public partial class AddAccount : Form
     {
+        bool IsNew = false;
         public AddAccount()
         {
             InitializeComponent();
@@ -37,11 +38,13 @@ namespace WestrenBank
             tAccountsBindingSource.AddNew();
             button1.Enabled = false;
             button2.Enabled = true;
+
+            this.IsNew = true;
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            for(int i=0;i<tAccountsDataGridView.RowCount-1;i++)
+            for(int i=0;i<tAccountsDataGridView.RowCount-2;i++)
             {
                 if(tAccountsDataGridView.Rows[i].Cells[0].FormattedValue.ToString() == accountIDTextBox.Text)
                 {

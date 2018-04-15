@@ -63,6 +63,12 @@
     <Compile Include="AddClientsAccounts.Designer.cs">
       <DependentUpon>AddClientsAccounts.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddLoan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddLoan.Designer.cs">
+      <DependentUpon>AddLoan.cs</DependentUpon>
+    </Compile>
     <Compile Include="BankDBDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -73,6 +79,18 @@
     </Compile>
     <Compile Include="Checks.Designer.cs">
       <DependentUpon>Checks.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DepositChecks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DepositChecks.Designer.cs">
+      <DependentUpon>DepositChecks.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Deposits.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Deposits.Designer.cs">
+      <DependentUpon>Deposits.cs</DependentUpon>
     </Compile>
     <Compile Include="HandleAccounts.cs">
       <SubType>Form</SubType>
@@ -101,6 +119,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports.Designer.cs">
+      <DependentUpon>Reports.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transfers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transfers.Designer.cs">
+      <DependentUpon>Transfers.cs</DependentUpon>
+    </Compile>
     <Compile Include="WatchAccount.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,8 +146,17 @@
     <EmbeddedResource Include="AddClientsAccounts.resx">
       <DependentUpon>AddClientsAccounts.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AddLoan.resx">
+      <DependentUpon>AddLoan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Checks.resx">
       <DependentUpon>Checks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DepositChecks.resx">
+      <DependentUpon>DepositChecks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Deposits.resx">
+      <DependentUpon>Deposits.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HandleAccounts.resx">
       <DependentUpon>HandleAccounts.cs</DependentUpon>
@@ -140,6 +179,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Reports.resx">
+      <DependentUpon>Reports.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transfers.resx">
+      <DependentUpon>Transfers.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="WatchAccount.resx">
       <DependentUpon>WatchAccount.cs</DependentUpon>
     </EmbeddedResource>

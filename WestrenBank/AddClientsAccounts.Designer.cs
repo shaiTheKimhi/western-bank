@@ -54,6 +54,10 @@
             this.button6 = new System.Windows.Forms.Button();
             this.tClientsTableAdapter = new WestrenBank.BankDBDataSetTableAdapters.TClientsTableAdapter();
             this.button7 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.button9 = new System.Windows.Forms.Button();
             accountIDLabel = new System.Windows.Forms.Label();
             clientIDLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.bankDBDataSet)).BeginInit();
@@ -98,10 +102,21 @@
             // tableAdapterManager
             // 
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.ChecksTableAdapter = null;
             this.tableAdapterManager.ClientsAndAccountsTableAdapter = this.clientsAndAccountsTableAdapter;
+            this.tableAdapterManager.CommissionsTableAdapter = null;
+            this.tableAdapterManager.DepositsTableAdapter = null;
+            this.tableAdapterManager.ExecutionTableAdapter = null;
+            this.tableAdapterManager.InterestCollectionTableAdapter = null;
+            this.tableAdapterManager.LoansTableAdapter = null;
+            this.tableAdapterManager.LoansToClientsTableAdapter = null;
+            this.tableAdapterManager.StocksAndAccountsTableAdapter = null;
+            this.tableAdapterManager.StocksTableAdapter = null;
             this.tableAdapterManager.TAccountsTableAdapter = this.tAccountsTableAdapter;
             this.tableAdapterManager.TClientsTableAdapter = null;
+            this.tableAdapterManager.TransfersTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = WestrenBank.BankDBDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.WithrawalsTableAdapter = null;
             // 
             // tAccountsTableAdapter
             // 
@@ -175,7 +190,7 @@
             // accountIDTextBox
             // 
             this.accountIDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clientsAndAccountsBindingSource, "AccountID", true));
-            this.accountIDTextBox.Location = new System.Drawing.Point(467, 38);
+            this.accountIDTextBox.Location = new System.Drawing.Point(629, 57);
             this.accountIDTextBox.Name = "accountIDTextBox";
             this.accountIDTextBox.Size = new System.Drawing.Size(100, 20);
             this.accountIDTextBox.TabIndex = 7;
@@ -216,10 +231,11 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(629, 67);
+            this.textBox1.Location = new System.Drawing.Point(467, 38);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 11;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // button5
             // 
@@ -255,11 +271,55 @@
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(507, 3);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(81, 23);
+            this.button8.TabIndex = 15;
+            this.button8.Text = "add client";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.DataSource = this.tAccountsBindingSource;
+            this.comboBox2.DisplayMember = "AccountID";
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(145, 169);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(121, 21);
+            this.comboBox2.TabIndex = 16;
+            this.comboBox2.ValueMember = "AccountID";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(55, 175);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(84, 13);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "choose account";
+            // 
+            // button9
+            // 
+            this.button9.Location = new System.Drawing.Point(106, 206);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(75, 23);
+            this.button9.TabIndex = 18;
+            this.button9.Text = "choose";
+            this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
+            // 
             // AddClientsAccounts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(753, 385);
+            this.Controls.Add(this.button9);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.button8);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
@@ -312,5 +372,9 @@
         private System.Windows.Forms.BindingSource tClientsBindingSource;
         private BankDBDataSetTableAdapters.TClientsTableAdapter tClientsTableAdapter;
         private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button9;
     }
 }

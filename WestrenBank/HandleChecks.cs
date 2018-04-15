@@ -19,12 +19,18 @@ namespace WestrenBank
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            Checks cf = new Checks();
+            this.Hide();
+            cf.ShowDialog();
+            this.Close();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            Deposits d = new Deposits();
+            this.Hide();
+            d.ShowDialog();
+            this.Close();
         }
     }
 }

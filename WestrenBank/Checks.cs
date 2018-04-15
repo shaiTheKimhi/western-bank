@@ -128,5 +128,10 @@ namespace WestrenBank
             checksBindingSource.EndEdit();
             checksTableAdapter.Update(bankDBDataSet.Checks);
         }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            (checksDataGridView.DataSource as BindingSource).Filter = "GiverID=" + textBox1.Text;
+        }
     }
 }

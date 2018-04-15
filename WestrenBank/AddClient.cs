@@ -36,6 +36,7 @@ namespace WestrenBank
         private void button1_Click(object sender, EventArgs e)
         {
             tClientsBindingSource.AddNew();
+            clientIDTextBox.Text = "";
             button2.Visible = true;
             button1.Visible = false;
         }
@@ -51,7 +52,7 @@ namespace WestrenBank
                 }
             }
             tClientsBindingSource.EndEdit();
-            tClientsTableAdapter.Update(this.bankDBDataSet.TClients);
+            tClientsTableAdapter.Fill(this.bankDBDataSet.TClients);
             button1.Visible = true;
             button2.Visible = false;
         }

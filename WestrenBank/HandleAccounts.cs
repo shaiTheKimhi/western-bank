@@ -45,6 +45,24 @@ namespace WestrenBank
             this.Close();
         }
 
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            AddAccount ac = new AddAccount();
+            this.Hide();
+            ac.ShowDialog();
+            this.Close();
+        }
 
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            AddClientsAccounts aca = new AddClientsAccounts();
+            this.Hide();
+            aca.ShowDialog();
+            this.Close();
+        }
     }
 }

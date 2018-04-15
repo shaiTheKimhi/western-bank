@@ -41,5 +41,13 @@ namespace WestrenBank
             hc.ShowDialog();
             this.Close();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Transfers t = new Transfers();
+            this.Hide();
+            t.ShowDialog();
+            this.Close();
+        }
     }
 }

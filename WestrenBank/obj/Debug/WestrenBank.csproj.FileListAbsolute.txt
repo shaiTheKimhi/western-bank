@@ -12,3 +12,11 @@ C:\Users\User\documents\visual studio 2017\Projects\WestrenBank\WestrenBank\obj\
 C:\Users\User\documents\visual studio 2017\Projects\WestrenBank\WestrenBank\obj\Debug\WestrenBank.exe
 C:\Users\User\documents\visual studio 2017\Projects\WestrenBank\WestrenBank\obj\Debug\WestrenBank.pdb
 C:\Users\User\Documents\Visual Studio 2017\Projects\WestrenBank\WestrenBank\obj\Debug\WestrenBank.AddClientsAccounts.resources
+C:\Users\User\Documents\Visual Studio 2017\Projects\WestrenBank\WestrenBank\obj\Debug\WestrenBank.Checks.resources
+C:\Users\User\Documents\Visual Studio 2017\Projects\WestrenBank\WestrenBank\obj\Debug\WestrenBank.Deposits.resources
+C:\Users\User\Documents\Visual Studio 2017\Projects\WestrenBank\WestrenBank\obj\Debug\WestrenBank.HandleAccounts.resources
+C:\Users\User\Documents\Visual Studio 2017\Projects\WestrenBank\WestrenBank\obj\Debug\WestrenBank.HandleChecks.resources
+C:\Users\User\Documents\Visual Studio 2017\Projects\WestrenBank\WestrenBank\obj\Debug\WestrenBank.Loan.resources
+C:\Users\User\Documents\Visual Studio 2017\Projects\WestrenBank\WestrenBank\obj\Debug\WestrenBank.AddLoan.resources
+C:\Users\User\Documents\Visual Studio 2017\Projects\WestrenBank\WestrenBank\obj\Debug\WestrenBank.DepositChecks.resources
+C:\Users\User\Documents\Visual Studio 2017\Projects\WestrenBank\WestrenBank\obj\Debug\WestrenBank.Transfers.resources

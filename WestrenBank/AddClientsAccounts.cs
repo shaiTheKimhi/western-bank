@@ -12,7 +12,7 @@ namespace WestrenBank
 {
     public partial class AddClientsAccounts : Form
     {
-        public string Aid;
+        public string Aid = "";
         DataView av;
         public AddClientsAccounts()
         {
@@ -24,7 +24,7 @@ namespace WestrenBank
             this.Validate();
             this.clientsAndAccountsBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.bankDBDataSet);
-
+            this.Aid = "";
         }
 
         private void AddClientsAccounts_Load(object sender, EventArgs e)
@@ -38,11 +38,12 @@ namespace WestrenBank
             //timer1.Enabled = true;
             //timer1.Interval = 1000;
             clientIDTextBox.Visible = false;
-            accountIDTextBox.Enabled = false;
-            accountIDTextBox.Text = "1";
-            DataView dv = new DataView(bankDBDataSet.ClientsAndAccounts);
-            dv.RowFilter = "AccountID='" + Aid + "'";
-            clientsAndAccountsDataGridView.DataSource = dv;
+            textBox1.Enabled = false;
+            if(Aid != "")
+            {
+                SetAccount(Aid);
+            }
+            
             /*av= new DataView(bankDBDataSet.TClients);
             comboBox1.DataSource = av;
             comboBox1.DisplayMember = "ClientID";*/
@@ -83,7 +84,8 @@ namespace WestrenBank
         private void button6_Click(object sender, EventArgs e)
         {
             clientsAndAccountsBindingSource.EndEdit();
-            clientsAndAccountsTableAdapter.Update(this.bankDBDataSet.ClientsAndAccounts);
+            //clientsAndAccountsTableAdapter.Update(this.bankDBDataSet.ClientsAndAccounts);
+            clientsAndAccountsTableAdapter.Fill(this.bankDBDataSet.ClientsAndAccounts);
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -98,6 +100,34 @@ namespace WestrenBank
             this.Hide();
             m.ShowDialog();
             this.Close();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            AddClient ac = new AddClient();
+            this.Hide();
+            ac.ShowDialog();
+            this.Close();
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            SetAccount(comboBox2.SelectedValue.ToString());
+        }
+        public void SetAccount(string AccountID)
+        {
+            textBox1.Enabled = true;
+            textBox1.Text = AccountID;
+            (clientsAndAccountsDataGridView.DataSource as BindingSource).Filter = "AccountID = '" + AccountID + "'";
+            textBox1.Enabled = false;
+            comboBox2.Visible = false;
+            label1.Visible = false;
+            button9.Visible = false;
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            //accountIDTextBox.Text = ((TextBox)sender).Text;
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace WestrenBank
 {
-    partial class AddAccount
+    partial class Transfers
     {
         /// <summary>
         /// Required designer variable.
@@ -46,18 +46,19 @@
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.accountIDTextBox = new System.Windows.Forms.TextBox();
             this.usernameTextBox = new System.Windows.Forms.TextBox();
             this.passwordTextBox = new System.Windows.Forms.TextBox();
             this.currentTextBox = new System.Windows.Forms.TextBox();
             this.creditFrameTextBox = new System.Windows.Forms.TextBox();
             this.incomeTextBox = new System.Windows.Forms.TextBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             accountIDLabel = new System.Windows.Forms.Label();
             usernameLabel = new System.Windows.Forms.Label();
             passwordLabel = new System.Windows.Forms.Label();
@@ -72,55 +73,55 @@
             // accountIDLabel
             // 
             accountIDLabel.AutoSize = true;
-            accountIDLabel.Location = new System.Drawing.Point(230, 17);
+            accountIDLabel.Location = new System.Drawing.Point(691, 19);
             accountIDLabel.Name = "accountIDLabel";
             accountIDLabel.Size = new System.Drawing.Size(64, 13);
-            accountIDLabel.TabIndex = 3;
+            accountIDLabel.TabIndex = 1;
             accountIDLabel.Text = "Account ID:";
             // 
             // usernameLabel
             // 
             usernameLabel.AutoSize = true;
-            usernameLabel.Location = new System.Drawing.Point(238, 50);
+            usernameLabel.Location = new System.Drawing.Point(691, 45);
             usernameLabel.Name = "usernameLabel";
             usernameLabel.Size = new System.Drawing.Size(56, 13);
-            usernameLabel.TabIndex = 5;
+            usernameLabel.TabIndex = 3;
             usernameLabel.Text = "username:";
             // 
             // passwordLabel
             // 
             passwordLabel.AutoSize = true;
-            passwordLabel.Location = new System.Drawing.Point(236, 85);
+            passwordLabel.Location = new System.Drawing.Point(691, 71);
             passwordLabel.Name = "passwordLabel";
             passwordLabel.Size = new System.Drawing.Size(55, 13);
-            passwordLabel.TabIndex = 7;
+            passwordLabel.TabIndex = 5;
             passwordLabel.Text = "password:";
             // 
             // currentLabel
             // 
             currentLabel.AutoSize = true;
-            currentLabel.Location = new System.Drawing.Point(457, 20);
+            currentLabel.Location = new System.Drawing.Point(691, 97);
             currentLabel.Name = "currentLabel";
             currentLabel.Size = new System.Drawing.Size(43, 13);
-            currentLabel.TabIndex = 9;
+            currentLabel.TabIndex = 7;
             currentLabel.Text = "current:";
             // 
             // creditFrameLabel
             // 
             creditFrameLabel.AutoSize = true;
-            creditFrameLabel.Location = new System.Drawing.Point(433, 50);
+            creditFrameLabel.Location = new System.Drawing.Point(691, 123);
             creditFrameLabel.Name = "creditFrameLabel";
             creditFrameLabel.Size = new System.Drawing.Size(68, 13);
-            creditFrameLabel.TabIndex = 11;
+            creditFrameLabel.TabIndex = 9;
             creditFrameLabel.Text = "credit Frame:";
             // 
             // incomeLabel
             // 
             incomeLabel.AutoSize = true;
-            incomeLabel.Location = new System.Drawing.Point(457, 77);
+            incomeLabel.Location = new System.Drawing.Point(691, 149);
             incomeLabel.Name = "incomeLabel";
             incomeLabel.Size = new System.Drawing.Size(44, 13);
-            incomeLabel.TabIndex = 13;
+            incomeLabel.TabIndex = 11;
             incomeLabel.Text = "income:";
             // 
             // bankDBDataSet
@@ -168,9 +169,9 @@
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn6});
             this.tAccountsDataGridView.DataSource = this.tAccountsBindingSource;
-            this.tAccountsDataGridView.Location = new System.Drawing.Point(12, 116);
+            this.tAccountsDataGridView.Location = new System.Drawing.Point(12, 0);
             this.tAccountsDataGridView.Name = "tAccountsDataGridView";
-            this.tAccountsDataGridView.Size = new System.Drawing.Size(652, 220);
+            this.tAccountsDataGridView.Size = new System.Drawing.Size(648, 220);
             this.tAccountsDataGridView.TabIndex = 1;
             // 
             // dataGridViewTextBoxColumn1
@@ -209,145 +210,142 @@
             this.dataGridViewTextBoxColumn6.HeaderText = "income";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(60, 28);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "new";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(60, 77);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "save";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
             // accountIDTextBox
             // 
             this.accountIDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tAccountsBindingSource, "AccountID", true));
-            this.accountIDTextBox.Location = new System.Drawing.Point(297, 13);
+            this.accountIDTextBox.Location = new System.Drawing.Point(765, 16);
             this.accountIDTextBox.Name = "accountIDTextBox";
             this.accountIDTextBox.Size = new System.Drawing.Size(100, 20);
-            this.accountIDTextBox.TabIndex = 4;
-            this.accountIDTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.currentTextBox_KeyPress);
+            this.accountIDTextBox.TabIndex = 2;
             // 
             // usernameTextBox
             // 
             this.usernameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tAccountsBindingSource, "username", true));
-            this.usernameTextBox.Location = new System.Drawing.Point(297, 47);
+            this.usernameTextBox.Location = new System.Drawing.Point(765, 42);
             this.usernameTextBox.Name = "usernameTextBox";
             this.usernameTextBox.Size = new System.Drawing.Size(100, 20);
-            this.usernameTextBox.TabIndex = 6;
+            this.usernameTextBox.TabIndex = 4;
             // 
             // passwordTextBox
             // 
             this.passwordTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tAccountsBindingSource, "password", true));
-            this.passwordTextBox.Location = new System.Drawing.Point(297, 82);
+            this.passwordTextBox.Location = new System.Drawing.Point(765, 68);
             this.passwordTextBox.Name = "passwordTextBox";
             this.passwordTextBox.Size = new System.Drawing.Size(100, 20);
-            this.passwordTextBox.TabIndex = 8;
+            this.passwordTextBox.TabIndex = 6;
             // 
             // currentTextBox
             // 
             this.currentTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tAccountsBindingSource, "current", true));
-            this.currentTextBox.Location = new System.Drawing.Point(507, 17);
+            this.currentTextBox.Location = new System.Drawing.Point(765, 94);
             this.currentTextBox.Name = "currentTextBox";
             this.currentTextBox.Size = new System.Drawing.Size(100, 20);
-            this.currentTextBox.TabIndex = 10;
-            this.currentTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.currentTextBox_KeyPress);
+            this.currentTextBox.TabIndex = 8;
             // 
             // creditFrameTextBox
             // 
             this.creditFrameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tAccountsBindingSource, "creditFrame", true));
-            this.creditFrameTextBox.Location = new System.Drawing.Point(507, 47);
+            this.creditFrameTextBox.Location = new System.Drawing.Point(765, 120);
             this.creditFrameTextBox.Name = "creditFrameTextBox";
             this.creditFrameTextBox.Size = new System.Drawing.Size(100, 20);
-            this.creditFrameTextBox.TabIndex = 12;
-            this.creditFrameTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.currentTextBox_KeyPress);
+            this.creditFrameTextBox.TabIndex = 10;
             // 
             // incomeTextBox
             // 
             this.incomeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tAccountsBindingSource, "income", true));
-            this.incomeTextBox.Location = new System.Drawing.Point(507, 74);
+            this.incomeTextBox.Location = new System.Drawing.Point(765, 146);
             this.incomeTextBox.Name = "incomeTextBox";
             this.incomeTextBox.Size = new System.Drawing.Size(100, 20);
-            this.incomeTextBox.TabIndex = 14;
-            this.incomeTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.currentTextBox_KeyPress);
+            this.incomeTextBox.TabIndex = 12;
             // 
-            // button3
+            // button1
             // 
-            this.button3.Location = new System.Drawing.Point(657, 87);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 15;
-            this.button3.Text = "down";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.button1.Location = new System.Drawing.Point(736, 211);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(120, 23);
+            this.button1.TabIndex = 15;
+            this.button1.Text = "Make Transfer";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button4
+            // comboBox1
             // 
-            this.button4.Location = new System.Drawing.Point(657, 45);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 16;
-            this.button4.Text = "up";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(596, 257);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 16;
             // 
-            // button5
+            // comboBox2
             // 
-            this.button5.Location = new System.Drawing.Point(738, 45);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 17;
-            this.button5.Text = "first";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(744, 257);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(121, 21);
+            this.comboBox2.TabIndex = 17;
             // 
-            // button6
+            // textBox1
             // 
-            this.button6.Location = new System.Drawing.Point(738, 87);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
-            this.button6.TabIndex = 18;
-            this.button6.Text = "last";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.textBox1.Location = new System.Drawing.Point(694, 294);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 18;
+            this.textBox1.Text = "transfer amount";
             // 
-            // AddAccount
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(462, 258);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(100, 20);
+            this.textBox2.TabIndex = 19;
+            this.textBox2.Text = "password";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(593, 241);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(41, 13);
+            this.label1.TabIndex = 20;
+            this.label1.Text = "giver id";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(741, 241);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(56, 13);
+            this.label2.TabIndex = 21;
+            this.label2.Text = "reciever id";
+            // 
+            // Transfers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(851, 361);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(incomeLabel);
-            this.Controls.Add(this.incomeTextBox);
-            this.Controls.Add(creditFrameLabel);
-            this.Controls.Add(this.creditFrameTextBox);
-            this.Controls.Add(currentLabel);
-            this.Controls.Add(this.currentTextBox);
-            this.Controls.Add(passwordLabel);
-            this.Controls.Add(this.passwordTextBox);
-            this.Controls.Add(usernameLabel);
-            this.Controls.Add(this.usernameTextBox);
+            this.ClientSize = new System.Drawing.Size(894, 332);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.button1);
             this.Controls.Add(accountIDLabel);
             this.Controls.Add(this.accountIDTextBox);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(usernameLabel);
+            this.Controls.Add(this.usernameTextBox);
+            this.Controls.Add(passwordLabel);
+            this.Controls.Add(this.passwordTextBox);
+            this.Controls.Add(currentLabel);
+            this.Controls.Add(this.currentTextBox);
+            this.Controls.Add(creditFrameLabel);
+            this.Controls.Add(this.creditFrameTextBox);
+            this.Controls.Add(incomeLabel);
+            this.Controls.Add(this.incomeTextBox);
             this.Controls.Add(this.tAccountsDataGridView);
-            this.Name = "AddAccount";
-            this.Text = "Accounts";
-            this.Load += new System.EventHandler(this.AddAccount_Load);
+            this.Name = "Transfers";
+            this.Text = "Transfers";
+            this.Load += new System.EventHandler(this.Transfers_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bankDBDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tAccountsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tAccountsDataGridView)).EndInit();
@@ -369,17 +367,18 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox accountIDTextBox;
         private System.Windows.Forms.TextBox usernameTextBox;
         private System.Windows.Forms.TextBox passwordTextBox;
         private System.Windows.Forms.TextBox currentTextBox;
         private System.Windows.Forms.TextBox creditFrameTextBox;
         private System.Windows.Forms.TextBox incomeTextBox;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }
