@@ -20,3 +20,7 @@ C:\Users\User\Documents\Visual Studio 2017\Projects\WestrenBank\WestrenBank\obj\
 C:\Users\User\Documents\Visual Studio 2017\Projects\WestrenBank\WestrenBank\obj\Debug\WestrenBank.AddLoan.resources
 C:\Users\User\Documents\Visual Studio 2017\Projects\WestrenBank\WestrenBank\obj\Debug\WestrenBank.DepositChecks.resources
 C:\Users\User\Documents\Visual Studio 2017\Projects\WestrenBank\WestrenBank\obj\Debug\WestrenBank.Transfers.resources
+C:\Users\User\Documents\Visual Studio 2017\Projects\WestrenBank\WestrenBank\obj\Debug\WestrenBank.ReportsAccounts.resources
+C:\Users\User\Documents\Visual Studio 2017\Projects\WestrenBank\WestrenBank\obj\Debug\WestrenBank.ReportsAndGraphs.resources
+C:\Users\User\Documents\Visual Studio 2017\Projects\WestrenBank\WestrenBank\obj\Debug\WestrenBank.ReportTransfer.resources
+C:\Users\User\Documents\Visual Studio 2017\Projects\WestrenBank\WestrenBank\obj\Debug\WestrenBank.AddLoan2.resources

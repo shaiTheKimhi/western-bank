@@ -69,6 +69,12 @@
     <Compile Include="AddLoan.Designer.cs">
       <DependentUpon>AddLoan.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddLoan2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddLoan2.Designer.cs">
+      <DependentUpon>AddLoan2.cs</DependentUpon>
+    </Compile>
     <Compile Include="BankDBDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -119,11 +125,23 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Reports.cs">
+    <Compile Include="ReportsAccounts.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Reports.Designer.cs">
-      <DependentUpon>Reports.cs</DependentUpon>
+    <Compile Include="ReportsAccounts.Designer.cs">
+      <DependentUpon>ReportsAccounts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportsAndGraphs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportsAndGraphs.Designer.cs">
+      <DependentUpon>ReportsAndGraphs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportTransfer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportTransfer.Designer.cs">
+      <DependentUpon>ReportTransfer.cs</DependentUpon>
     </Compile>
     <Compile Include="Transfers.cs">
       <SubType>Form</SubType>
@@ -148,6 +166,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddLoan.resx">
       <DependentUpon>AddLoan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddLoan2.resx">
+      <DependentUpon>AddLoan2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Checks.resx">
       <DependentUpon>Checks.cs</DependentUpon>
@@ -179,8 +200,14 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Reports.resx">
-      <DependentUpon>Reports.cs</DependentUpon>
+    <EmbeddedResource Include="ReportsAccounts.resx">
+      <DependentUpon>ReportsAccounts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportsAndGraphs.resx">
+      <DependentUpon>ReportsAndGraphs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportTransfer.resx">
+      <DependentUpon>ReportTransfer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Transfers.resx">
       <DependentUpon>Transfers.cs</DependentUpon>

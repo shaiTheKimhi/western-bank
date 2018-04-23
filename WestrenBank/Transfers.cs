@@ -27,6 +27,8 @@ namespace WestrenBank
 
         private void Transfers_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'bankDBDataSet.Transfers' table. You can move, or remove it, as needed.
+            this.transfersTableAdapter.Fill(this.bankDBDataSet.Transfers);
             // TODO: This line of code loads data into the 'bankDBDataSet.TAccounts' table. You can move, or remove it, as needed.
             this.tAccountsTableAdapter.Fill(this.bankDBDataSet.TAccounts);
 
@@ -36,7 +38,7 @@ namespace WestrenBank
         {
             string reciverID = comboBox2.SelectedValue.ToString();
             string giverID = comboBox1.SelectedValue.ToString();
-            (tAccountsDataGridView.DataSource as BindingSource).Filter = "Where AccountID = " + giverID;
+            (tAccountsDataGridView.DataSource as BindingSource).Filter = "AccountID = " + giverID;
             int diff = int.Parse(textBox1.Text);
             int money = int.Parse(currentTextBox.Text) - diff;
             if(-money > int.Parse(creditFrameTextBox.Text))
@@ -52,12 +54,34 @@ namespace WestrenBank
 
             currentTextBox.Text = money.ToString();
             tAccountsBindingSource.EndEdit();
-            tAccountsTableAdapter.Fill(bankDBDataSet.TAccounts);
+            tAccountsTableAdapter.Update(bankDBDataSet.TAccounts);
 
-            (tAccountsBindingSource.DataSource as BindingSource).Filter = "Where AccountID = " + reciverID;
+            (tAccountsDataGridView.DataSource as BindingSource).Filter = "AccountID = " + reciverID;
             currentTextBox.Text = (int.Parse(currentTextBox.Text) + diff).ToString();
             tAccountsBindingSource.EndEdit();
-            tAccountsTableAdapter.Fill(bankDBDataSet.TAccounts);
+            tAccountsTableAdapter.Update(bankDBDataSet.TAccounts);
+
+            transfersBindingSource.AddNew();
+            //transferIDTextBox.Text = new Random().Next(100000000).ToString();
+            recieverAccountIDTextBox.Text = reciverID;
+            senderAccountIDTextBox.Text = giverID;
+            transferAmountTextBox.Text = diff.ToString();
+            transferDateDateTimePicker.Value = DateTime.Now;
+
+            transfersBindingSource.EndEdit();
+            transfersTableAdapter.Update(bankDBDataSet.Transfers);
+
+            (tAccountsDataGridView.DataSource as BindingSource).Filter = "";
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

@@ -35,6 +35,11 @@
             System.Windows.Forms.Label currentLabel;
             System.Windows.Forms.Label creditFrameLabel;
             System.Windows.Forms.Label incomeLabel;
+            System.Windows.Forms.Label transferIDLabel;
+            System.Windows.Forms.Label recieverAccountIDLabel;
+            System.Windows.Forms.Label senderAccountIDLabel;
+            System.Windows.Forms.Label transferAmountLabel;
+            System.Windows.Forms.Label transferDateLabel;
             this.bankDBDataSet = new WestrenBank.BankDBDataSet();
             this.tAccountsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tAccountsTableAdapter = new WestrenBank.BankDBDataSetTableAdapters.TAccountsTableAdapter();
@@ -59,15 +64,37 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.transfersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.transfersTableAdapter = new WestrenBank.BankDBDataSetTableAdapters.TransfersTableAdapter();
+            this.transfersDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.transferIDTextBox = new System.Windows.Forms.TextBox();
+            this.recieverAccountIDTextBox = new System.Windows.Forms.TextBox();
+            this.senderAccountIDTextBox = new System.Windows.Forms.TextBox();
+            this.transferAmountTextBox = new System.Windows.Forms.TextBox();
+            this.transferDateDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.tAccountsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             accountIDLabel = new System.Windows.Forms.Label();
             usernameLabel = new System.Windows.Forms.Label();
             passwordLabel = new System.Windows.Forms.Label();
             currentLabel = new System.Windows.Forms.Label();
             creditFrameLabel = new System.Windows.Forms.Label();
             incomeLabel = new System.Windows.Forms.Label();
+            transferIDLabel = new System.Windows.Forms.Label();
+            recieverAccountIDLabel = new System.Windows.Forms.Label();
+            senderAccountIDLabel = new System.Windows.Forms.Label();
+            transferAmountLabel = new System.Windows.Forms.Label();
+            transferDateLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.bankDBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tAccountsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tAccountsDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.transfersBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.transfersDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tAccountsBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // accountIDLabel
@@ -270,19 +297,26 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.DataSource = this.tAccountsBindingSource;
+            this.comboBox1.DisplayMember = "username";
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(596, 257);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 16;
+            this.comboBox1.ValueMember = "AccountID";
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // comboBox2
             // 
+            this.comboBox2.DataSource = this.tAccountsBindingSource1;
+            this.comboBox2.DisplayMember = "username";
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Location = new System.Drawing.Point(744, 257);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(121, 21);
             this.comboBox2.TabIndex = 17;
+            this.comboBox2.ValueMember = "AccountID";
             // 
             // textBox1
             // 
@@ -318,11 +352,167 @@
             this.label2.TabIndex = 21;
             this.label2.Text = "reciever id";
             // 
+            // transfersBindingSource
+            // 
+            this.transfersBindingSource.DataMember = "Transfers";
+            this.transfersBindingSource.DataSource = this.bankDBDataSet;
+            // 
+            // transfersTableAdapter
+            // 
+            this.transfersTableAdapter.ClearBeforeFill = true;
+            // 
+            // transfersDataGridView
+            // 
+            this.transfersDataGridView.AutoGenerateColumns = false;
+            this.transfersDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.transfersDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn8,
+            this.dataGridViewTextBoxColumn9,
+            this.dataGridViewTextBoxColumn10,
+            this.dataGridViewTextBoxColumn11});
+            this.transfersDataGridView.DataSource = this.transfersBindingSource;
+            this.transfersDataGridView.Location = new System.Drawing.Point(12, 226);
+            this.transfersDataGridView.Name = "transfersDataGridView";
+            this.transfersDataGridView.Size = new System.Drawing.Size(300, 220);
+            this.transfersDataGridView.TabIndex = 21;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "TransferID";
+            this.dataGridViewTextBoxColumn7.HeaderText = "TransferID";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "RecieverAccountID";
+            this.dataGridViewTextBoxColumn8.HeaderText = "RecieverAccountID";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "SenderAccountID";
+            this.dataGridViewTextBoxColumn9.HeaderText = "SenderAccountID";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.DataPropertyName = "TransferAmount";
+            this.dataGridViewTextBoxColumn10.HeaderText = "TransferAmount";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            // 
+            // dataGridViewTextBoxColumn11
+            // 
+            this.dataGridViewTextBoxColumn11.DataPropertyName = "TransferDate";
+            this.dataGridViewTextBoxColumn11.HeaderText = "TransferDate";
+            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            // 
+            // transferIDLabel
+            // 
+            transferIDLabel.AutoSize = true;
+            transferIDLabel.Location = new System.Drawing.Point(373, 343);
+            transferIDLabel.Name = "transferIDLabel";
+            transferIDLabel.Size = new System.Drawing.Size(63, 13);
+            transferIDLabel.TabIndex = 21;
+            transferIDLabel.Text = "Transfer ID:";
+            // 
+            // transferIDTextBox
+            // 
+            this.transferIDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.transfersBindingSource, "TransferID", true));
+            this.transferIDTextBox.Location = new System.Drawing.Point(489, 340);
+            this.transferIDTextBox.Name = "transferIDTextBox";
+            this.transferIDTextBox.Size = new System.Drawing.Size(200, 20);
+            this.transferIDTextBox.TabIndex = 22;
+            // 
+            // recieverAccountIDLabel
+            // 
+            recieverAccountIDLabel.AutoSize = true;
+            recieverAccountIDLabel.Location = new System.Drawing.Point(373, 369);
+            recieverAccountIDLabel.Name = "recieverAccountIDLabel";
+            recieverAccountIDLabel.Size = new System.Drawing.Size(110, 13);
+            recieverAccountIDLabel.TabIndex = 23;
+            recieverAccountIDLabel.Text = "Reciever Account ID:";
+            // 
+            // recieverAccountIDTextBox
+            // 
+            this.recieverAccountIDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.transfersBindingSource, "RecieverAccountID", true));
+            this.recieverAccountIDTextBox.Location = new System.Drawing.Point(489, 366);
+            this.recieverAccountIDTextBox.Name = "recieverAccountIDTextBox";
+            this.recieverAccountIDTextBox.Size = new System.Drawing.Size(200, 20);
+            this.recieverAccountIDTextBox.TabIndex = 24;
+            // 
+            // senderAccountIDLabel
+            // 
+            senderAccountIDLabel.AutoSize = true;
+            senderAccountIDLabel.Location = new System.Drawing.Point(373, 395);
+            senderAccountIDLabel.Name = "senderAccountIDLabel";
+            senderAccountIDLabel.Size = new System.Drawing.Size(101, 13);
+            senderAccountIDLabel.TabIndex = 25;
+            senderAccountIDLabel.Text = "Sender Account ID:";
+            // 
+            // senderAccountIDTextBox
+            // 
+            this.senderAccountIDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.transfersBindingSource, "SenderAccountID", true));
+            this.senderAccountIDTextBox.Location = new System.Drawing.Point(489, 392);
+            this.senderAccountIDTextBox.Name = "senderAccountIDTextBox";
+            this.senderAccountIDTextBox.Size = new System.Drawing.Size(200, 20);
+            this.senderAccountIDTextBox.TabIndex = 26;
+            // 
+            // transferAmountLabel
+            // 
+            transferAmountLabel.AutoSize = true;
+            transferAmountLabel.Location = new System.Drawing.Point(373, 421);
+            transferAmountLabel.Name = "transferAmountLabel";
+            transferAmountLabel.Size = new System.Drawing.Size(88, 13);
+            transferAmountLabel.TabIndex = 27;
+            transferAmountLabel.Text = "Transfer Amount:";
+            // 
+            // transferAmountTextBox
+            // 
+            this.transferAmountTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.transfersBindingSource, "TransferAmount", true));
+            this.transferAmountTextBox.Location = new System.Drawing.Point(489, 418);
+            this.transferAmountTextBox.Name = "transferAmountTextBox";
+            this.transferAmountTextBox.Size = new System.Drawing.Size(200, 20);
+            this.transferAmountTextBox.TabIndex = 28;
+            // 
+            // transferDateLabel
+            // 
+            transferDateLabel.AutoSize = true;
+            transferDateLabel.Location = new System.Drawing.Point(373, 448);
+            transferDateLabel.Name = "transferDateLabel";
+            transferDateLabel.Size = new System.Drawing.Size(75, 13);
+            transferDateLabel.TabIndex = 29;
+            transferDateLabel.Text = "Transfer Date:";
+            // 
+            // transferDateDateTimePicker
+            // 
+            this.transferDateDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.transfersBindingSource, "TransferDate", true));
+            this.transferDateDateTimePicker.Location = new System.Drawing.Point(489, 444);
+            this.transferDateDateTimePicker.Name = "transferDateDateTimePicker";
+            this.transferDateDateTimePicker.Size = new System.Drawing.Size(200, 20);
+            this.transferDateDateTimePicker.TabIndex = 30;
+            // 
+            // tAccountsBindingSource1
+            // 
+            this.tAccountsBindingSource1.DataMember = "TAccounts";
+            this.tAccountsBindingSource1.DataSource = this.bankDBDataSet;
+            // 
             // Transfers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(894, 332);
+            this.ClientSize = new System.Drawing.Size(894, 497);
+            this.Controls.Add(transferIDLabel);
+            this.Controls.Add(this.transferIDTextBox);
+            this.Controls.Add(recieverAccountIDLabel);
+            this.Controls.Add(this.recieverAccountIDTextBox);
+            this.Controls.Add(senderAccountIDLabel);
+            this.Controls.Add(this.senderAccountIDTextBox);
+            this.Controls.Add(transferAmountLabel);
+            this.Controls.Add(this.transferAmountTextBox);
+            this.Controls.Add(transferDateLabel);
+            this.Controls.Add(this.transferDateDateTimePicker);
+            this.Controls.Add(this.transfersDataGridView);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox2);
@@ -349,6 +539,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.bankDBDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tAccountsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tAccountsDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.transfersBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.transfersDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tAccountsBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -380,5 +573,19 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.BindingSource transfersBindingSource;
+        private BankDBDataSetTableAdapters.TransfersTableAdapter transfersTableAdapter;
+        private System.Windows.Forms.DataGridView transfersDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
+        private System.Windows.Forms.TextBox transferIDTextBox;
+        private System.Windows.Forms.TextBox recieverAccountIDTextBox;
+        private System.Windows.Forms.TextBox senderAccountIDTextBox;
+        private System.Windows.Forms.TextBox transferAmountTextBox;
+        private System.Windows.Forms.DateTimePicker transferDateDateTimePicker;
+        private System.Windows.Forms.BindingSource tAccountsBindingSource1;
     }
 }
