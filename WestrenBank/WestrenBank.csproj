@@ -51,6 +51,12 @@
     <Compile Include="AddAccount.Designer.cs">
       <DependentUpon>AddAccount.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddChecks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddChecks.Designer.cs">
+      <DependentUpon>AddChecks.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddClient.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -143,6 +149,12 @@
     <Compile Include="ReportTransfer.Designer.cs">
       <DependentUpon>ReportTransfer.cs</DependentUpon>
     </Compile>
+    <Compile Include="TakeCommision.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TakeCommision.Designer.cs">
+      <DependentUpon>TakeCommision.cs</DependentUpon>
+    </Compile>
     <Compile Include="Transfers.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -157,6 +169,9 @@
     </Compile>
     <EmbeddedResource Include="AddAccount.resx">
       <DependentUpon>AddAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddChecks.resx">
+      <DependentUpon>AddChecks.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddClient.resx">
       <DependentUpon>AddClient.cs</DependentUpon>
@@ -208,6 +223,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ReportTransfer.resx">
       <DependentUpon>ReportTransfer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TakeCommision.resx">
+      <DependentUpon>TakeCommision.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Transfers.resx">
       <DependentUpon>Transfers.cs</DependentUpon>

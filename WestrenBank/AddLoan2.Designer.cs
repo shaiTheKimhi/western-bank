@@ -43,6 +43,8 @@
             this.loansBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.loansTableAdapter = new WestrenBank.BankDBDataSetTableAdapters.LoansTableAdapter();
             this.tableAdapterManager = new WestrenBank.BankDBDataSetTableAdapters.TableAdapterManager();
+            this.loansToClientsTableAdapter = new WestrenBank.BankDBDataSetTableAdapters.LoansToClientsTableAdapter();
+            this.tAccountsTableAdapter = new WestrenBank.BankDBDataSetTableAdapters.TAccountsTableAdapter();
             this.loansDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,7 +54,6 @@
             this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.loansToClientsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.loansToClientsTableAdapter = new WestrenBank.BankDBDataSetTableAdapters.LoansToClientsTableAdapter();
             this.loansToClientsDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -70,9 +71,8 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.tAccountsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tAccountsTableAdapter = new WestrenBank.BankDBDataSetTableAdapters.TAccountsTableAdapter();
+            this.label1 = new System.Windows.Forms.Label();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.button3 = new System.Windows.Forms.Button();
             this.tAccountsDataGridView = new System.Windows.Forms.DataGridView();
@@ -102,6 +102,96 @@
             ((System.ComponentModel.ISupportInitialize)(this.tAccountsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tAccountsDataGridView)).BeginInit();
             this.SuspendLayout();
+            // 
+            // loanIDLabel
+            // 
+            loanIDLabel.AutoSize = true;
+            loanIDLabel.Location = new System.Drawing.Point(353, 36);
+            loanIDLabel.Name = "loanIDLabel";
+            loanIDLabel.Size = new System.Drawing.Size(48, 13);
+            loanIDLabel.TabIndex = 2;
+            loanIDLabel.Text = "Loan ID:";
+            // 
+            // loanSumLabel
+            // 
+            loanSumLabel.AutoSize = true;
+            loanSumLabel.Location = new System.Drawing.Point(353, 62);
+            loanSumLabel.Name = "loanSumLabel";
+            loanSumLabel.Size = new System.Drawing.Size(58, 13);
+            loanSumLabel.TabIndex = 4;
+            loanSumLabel.Text = "Loan Sum:";
+            // 
+            // loanStartDateLabel
+            // 
+            loanStartDateLabel.AutoSize = true;
+            loanStartDateLabel.Location = new System.Drawing.Point(353, 89);
+            loanStartDateLabel.Name = "loanStartDateLabel";
+            loanStartDateLabel.Size = new System.Drawing.Size(85, 13);
+            loanStartDateLabel.TabIndex = 6;
+            loanStartDateLabel.Text = "Loan Start Date:";
+            // 
+            // loanEndDateLabel
+            // 
+            loanEndDateLabel.AutoSize = true;
+            loanEndDateLabel.Location = new System.Drawing.Point(353, 115);
+            loanEndDateLabel.Name = "loanEndDateLabel";
+            loanEndDateLabel.Size = new System.Drawing.Size(82, 13);
+            loanEndDateLabel.TabIndex = 8;
+            loanEndDateLabel.Text = "Loan End Date:";
+            // 
+            // guarenteeIDLabel
+            // 
+            guarenteeIDLabel.AutoSize = true;
+            guarenteeIDLabel.Location = new System.Drawing.Point(353, 140);
+            guarenteeIDLabel.Name = "guarenteeIDLabel";
+            guarenteeIDLabel.Size = new System.Drawing.Size(74, 13);
+            guarenteeIDLabel.TabIndex = 10;
+            guarenteeIDLabel.Text = "Guarentee ID:";
+            // 
+            // returnedLabel
+            // 
+            returnedLabel.AutoSize = true;
+            returnedLabel.Location = new System.Drawing.Point(353, 168);
+            returnedLabel.Name = "returnedLabel";
+            returnedLabel.Size = new System.Drawing.Size(54, 13);
+            returnedLabel.TabIndex = 12;
+            returnedLabel.Text = "Returned:";
+            // 
+            // interestLabel
+            // 
+            interestLabel.AutoSize = true;
+            interestLabel.Location = new System.Drawing.Point(353, 196);
+            interestLabel.Name = "interestLabel";
+            interestLabel.Size = new System.Drawing.Size(45, 13);
+            interestLabel.TabIndex = 14;
+            interestLabel.Text = "Interest:";
+            // 
+            // loanIDLabel1
+            // 
+            loanIDLabel1.AutoSize = true;
+            loanIDLabel1.Location = new System.Drawing.Point(495, 320);
+            loanIDLabel1.Name = "loanIDLabel1";
+            loanIDLabel1.Size = new System.Drawing.Size(48, 13);
+            loanIDLabel1.TabIndex = 16;
+            loanIDLabel1.Text = "Loan ID:";
+            // 
+            // clientIDLabel
+            // 
+            clientIDLabel.AutoSize = true;
+            clientIDLabel.Location = new System.Drawing.Point(495, 346);
+            clientIDLabel.Name = "clientIDLabel";
+            clientIDLabel.Size = new System.Drawing.Size(64, 13);
+            clientIDLabel.TabIndex = 18;
+            clientIDLabel.Text = "Account ID:";
+            // 
+            // clientPartLabel
+            // 
+            clientPartLabel.AutoSize = true;
+            clientPartLabel.Location = new System.Drawing.Point(495, 372);
+            clientPartLabel.Name = "clientPartLabel";
+            clientPartLabel.Size = new System.Drawing.Size(58, 13);
+            clientPartLabel.TabIndex = 20;
+            clientPartLabel.Text = "Client Part:";
             // 
             // bankDBDataSet
             // 
@@ -135,6 +225,14 @@
             this.tableAdapterManager.TransfersTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = WestrenBank.BankDBDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.WithrawalsTableAdapter = null;
+            // 
+            // loansToClientsTableAdapter
+            // 
+            this.loansToClientsTableAdapter.ClearBeforeFill = true;
+            // 
+            // tAccountsTableAdapter
+            // 
+            this.tAccountsTableAdapter.ClearBeforeFill = true;
             // 
             // loansDataGridView
             // 
@@ -201,10 +299,6 @@
             this.loansToClientsBindingSource.DataMember = "LoansToClients";
             this.loansToClientsBindingSource.DataSource = this.bankDBDataSet;
             // 
-            // loansToClientsTableAdapter
-            // 
-            this.loansToClientsTableAdapter.ClearBeforeFill = true;
-            // 
             // loansToClientsDataGridView
             // 
             this.loansToClientsDataGridView.AutoGenerateColumns = false;
@@ -237,15 +331,6 @@
             this.dataGridViewTextBoxColumn9.HeaderText = "ClientPart";
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
             // 
-            // loanIDLabel
-            // 
-            loanIDLabel.AutoSize = true;
-            loanIDLabel.Location = new System.Drawing.Point(353, 36);
-            loanIDLabel.Name = "loanIDLabel";
-            loanIDLabel.Size = new System.Drawing.Size(48, 13);
-            loanIDLabel.TabIndex = 2;
-            loanIDLabel.Text = "Loan ID:";
-            // 
             // loanIDTextBox
             // 
             this.loanIDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.loansBindingSource, "LoanID", true));
@@ -253,15 +338,6 @@
             this.loanIDTextBox.Name = "loanIDTextBox";
             this.loanIDTextBox.Size = new System.Drawing.Size(200, 20);
             this.loanIDTextBox.TabIndex = 3;
-            // 
-            // loanSumLabel
-            // 
-            loanSumLabel.AutoSize = true;
-            loanSumLabel.Location = new System.Drawing.Point(353, 62);
-            loanSumLabel.Name = "loanSumLabel";
-            loanSumLabel.Size = new System.Drawing.Size(58, 13);
-            loanSumLabel.TabIndex = 4;
-            loanSumLabel.Text = "Loan Sum:";
             // 
             // loanSumTextBox
             // 
@@ -271,15 +347,6 @@
             this.loanSumTextBox.Size = new System.Drawing.Size(200, 20);
             this.loanSumTextBox.TabIndex = 5;
             // 
-            // loanStartDateLabel
-            // 
-            loanStartDateLabel.AutoSize = true;
-            loanStartDateLabel.Location = new System.Drawing.Point(353, 89);
-            loanStartDateLabel.Name = "loanStartDateLabel";
-            loanStartDateLabel.Size = new System.Drawing.Size(85, 13);
-            loanStartDateLabel.TabIndex = 6;
-            loanStartDateLabel.Text = "Loan Start Date:";
-            // 
             // loanStartDateDateTimePicker
             // 
             this.loanStartDateDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.loansBindingSource, "LoanStartDate", true));
@@ -287,15 +354,6 @@
             this.loanStartDateDateTimePicker.Name = "loanStartDateDateTimePicker";
             this.loanStartDateDateTimePicker.Size = new System.Drawing.Size(200, 20);
             this.loanStartDateDateTimePicker.TabIndex = 7;
-            // 
-            // loanEndDateLabel
-            // 
-            loanEndDateLabel.AutoSize = true;
-            loanEndDateLabel.Location = new System.Drawing.Point(353, 115);
-            loanEndDateLabel.Name = "loanEndDateLabel";
-            loanEndDateLabel.Size = new System.Drawing.Size(82, 13);
-            loanEndDateLabel.TabIndex = 8;
-            loanEndDateLabel.Text = "Loan End Date:";
             // 
             // loanEndDateDateTimePicker
             // 
@@ -305,15 +363,6 @@
             this.loanEndDateDateTimePicker.Size = new System.Drawing.Size(200, 20);
             this.loanEndDateDateTimePicker.TabIndex = 9;
             // 
-            // guarenteeIDLabel
-            // 
-            guarenteeIDLabel.AutoSize = true;
-            guarenteeIDLabel.Location = new System.Drawing.Point(353, 140);
-            guarenteeIDLabel.Name = "guarenteeIDLabel";
-            guarenteeIDLabel.Size = new System.Drawing.Size(74, 13);
-            guarenteeIDLabel.TabIndex = 10;
-            guarenteeIDLabel.Text = "Guarentee ID:";
-            // 
             // guarenteeIDTextBox
             // 
             this.guarenteeIDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.loansBindingSource, "GuarenteeID", true));
@@ -321,15 +370,6 @@
             this.guarenteeIDTextBox.Name = "guarenteeIDTextBox";
             this.guarenteeIDTextBox.Size = new System.Drawing.Size(200, 20);
             this.guarenteeIDTextBox.TabIndex = 11;
-            // 
-            // returnedLabel
-            // 
-            returnedLabel.AutoSize = true;
-            returnedLabel.Location = new System.Drawing.Point(353, 168);
-            returnedLabel.Name = "returnedLabel";
-            returnedLabel.Size = new System.Drawing.Size(54, 13);
-            returnedLabel.TabIndex = 12;
-            returnedLabel.Text = "Returned:";
             // 
             // returnedCheckBox
             // 
@@ -341,15 +381,6 @@
             this.returnedCheckBox.Text = "checkBox1";
             this.returnedCheckBox.UseVisualStyleBackColor = true;
             // 
-            // interestLabel
-            // 
-            interestLabel.AutoSize = true;
-            interestLabel.Location = new System.Drawing.Point(353, 196);
-            interestLabel.Name = "interestLabel";
-            interestLabel.Size = new System.Drawing.Size(45, 13);
-            interestLabel.TabIndex = 14;
-            interestLabel.Text = "Interest:";
-            // 
             // interestTextBox
             // 
             this.interestTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.loansBindingSource, "Interest", true));
@@ -357,15 +388,6 @@
             this.interestTextBox.Name = "interestTextBox";
             this.interestTextBox.Size = new System.Drawing.Size(200, 20);
             this.interestTextBox.TabIndex = 15;
-            // 
-            // loanIDLabel1
-            // 
-            loanIDLabel1.AutoSize = true;
-            loanIDLabel1.Location = new System.Drawing.Point(501, 320);
-            loanIDLabel1.Name = "loanIDLabel1";
-            loanIDLabel1.Size = new System.Drawing.Size(48, 13);
-            loanIDLabel1.TabIndex = 16;
-            loanIDLabel1.Text = "Loan ID:";
             // 
             // loanIDTextBox1
             // 
@@ -375,15 +397,6 @@
             this.loanIDTextBox1.Size = new System.Drawing.Size(100, 20);
             this.loanIDTextBox1.TabIndex = 17;
             // 
-            // clientIDLabel
-            // 
-            clientIDLabel.AutoSize = true;
-            clientIDLabel.Location = new System.Drawing.Point(501, 346);
-            clientIDLabel.Name = "clientIDLabel";
-            clientIDLabel.Size = new System.Drawing.Size(50, 13);
-            clientIDLabel.TabIndex = 18;
-            clientIDLabel.Text = "Client ID:";
-            // 
             // clientIDTextBox
             // 
             this.clientIDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.loansToClientsBindingSource, "ClientID", true));
@@ -391,15 +404,6 @@
             this.clientIDTextBox.Name = "clientIDTextBox";
             this.clientIDTextBox.Size = new System.Drawing.Size(100, 20);
             this.clientIDTextBox.TabIndex = 19;
-            // 
-            // clientPartLabel
-            // 
-            clientPartLabel.AutoSize = true;
-            clientPartLabel.Location = new System.Drawing.Point(501, 372);
-            clientPartLabel.Name = "clientPartLabel";
-            clientPartLabel.Size = new System.Drawing.Size(58, 13);
-            clientPartLabel.TabIndex = 20;
-            clientPartLabel.Text = "Client Part:";
             // 
             // clientPartTextBox
             // 
@@ -440,23 +444,19 @@
             this.comboBox1.TabIndex = 24;
             this.comboBox1.ValueMember = "AccountID";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(368, 260);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(33, 13);
-            this.label1.TabIndex = 25;
-            this.label1.Text = "Client";
-            // 
             // tAccountsBindingSource
             // 
             this.tAccountsBindingSource.DataMember = "TAccounts";
             this.tAccountsBindingSource.DataSource = this.bankDBDataSet;
             // 
-            // tAccountsTableAdapter
+            // label1
             // 
-            this.tAccountsTableAdapter.ClearBeforeFill = true;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(368, 260);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(47, 13);
+            this.label1.TabIndex = 25;
+            this.label1.Text = "Account";
             // 
             // listBox1
             // 

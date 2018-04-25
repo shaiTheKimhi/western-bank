@@ -56,6 +56,11 @@ namespace WestrenBank
             tAccountsTableAdapter.Update(this.bankDBDataSet.TAccounts);
             button2.Enabled = false;
             button1.Enabled = true;
+            // Add checks to the account
+            AddChecks f = new AddChecks();
+            f.accountID = accountIDTextBox.Text;
+            f.ShowDialog();
+            // Add clients to the account
             AddClientsAccounts aca = new AddClientsAccounts();
             aca.Aid = accountIDTextBox.Text;
             this.Hide();

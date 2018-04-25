@@ -67,6 +67,7 @@ namespace WestrenBank
         {
             currentTextBox.Text = (int.Parse(currentTextBox.Text) + int.Parse(textBox2.Text)).ToString();
             tAccountsBindingSource.EndEdit();
+            tAccountsTableAdapter.Update(bankDBDataSet.TAccounts);
         }
 
         private void clientsAndAccountsBindingSource_CurrentChanged(object sender, EventArgs e)
