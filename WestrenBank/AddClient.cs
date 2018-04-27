@@ -43,16 +43,21 @@ namespace WestrenBank
 
         private void button2_Click(object sender, EventArgs e)
         {
+            if(clientIDTextBox.Text == "" || clientNameTextBox.Text == "")
+            {
+                MessageBox.Show("הינך חייב להכניס ערכים");
+                return;
+            }
             for(int i=0;i<tClientsDataGridView.Rows.Count-2;i++)
             {
                 if(clientIDTextBox.Text==tClientsDataGridView.Rows[i].Cells[0].FormattedValue.ToString())
                 {
-                    MessageBox.Show("client already exists");
+                    MessageBox.Show("הלקוח כבר קיים");
                     return;
                 }
             }
             tClientsBindingSource.EndEdit();
-            tClientsTableAdapter.Fill(this.bankDBDataSet.TClients);
+            tClientsTableAdapter.Update(this.bankDBDataSet.TClients);
             button1.Visible = true;
             button2.Visible = false;
         }

@@ -35,6 +35,9 @@ namespace WestrenBank
             // this.tAccountsTableAdapter.Fill(this.bankDBDataSet.TAccounts);
             clientsAndAccountsDataGridView.Visible = false;
             currentTextBox.Visible = false;
+            creditFrameTextBox.Visible = false;
+            accountIDTextBox.Visible = false;
+            comboBox1.SelectedIndex = 0;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -65,9 +68,24 @@ namespace WestrenBank
 
         private void button2_Click(object sender, EventArgs e)
         {
-            currentTextBox.Text = (int.Parse(currentTextBox.Text) + int.Parse(textBox2.Text)).ToString();
+            
+            int sign = comboBox1.SelectedIndex == 0 ? -1 : 1;
+            int frame = int.Parse(creditFrameTextBox.Text);
+            if(sign == -1 && (frame + int.Parse(currentTextBox.Text) < 1.1 * int.Parse(textBox2.Text)))
+            {
+                MessageBox.Show("אין די כסף כדי לבצע משיכה");
+                return;
+            }
+            currentTextBox.Text = (int.Parse(currentTextBox.Text) + sign * int.Parse(textBox2.Text)).ToString();
             tAccountsBindingSource.EndEdit();
             tAccountsTableAdapter.Update(bankDBDataSet.TAccounts);
+
+            TakeCommision f = new TakeCommision();
+            f.AccountID = accountIDTextBox.Text;
+            f.money = (int)(int.Parse(textBox2.Text) * 0.1);
+            f.form = this;
+            MessageBox.Show("עמלה:" + f.money);
+            f.ShowDialog();
         }
 
         private void clientsAndAccountsBindingSource_CurrentChanged(object sender, EventArgs e)
@@ -85,7 +103,27 @@ namespace WestrenBank
 
         private void button3_Click(object sender, EventArgs e)
         {
-            (tAccountsBindingSource.DataSource as BindingSource).Filter = "AccountID = " + textBox1.Text;
+            (tAccountsDataGridView.DataSource as BindingSource).Filter = "AccountID = " + textBox1.Text;
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            button2.Text = comboBox1.Items[comboBox1.SelectedIndex].ToString();
+        }
+        public void update()
+        {
+            tAccountsDataGridView.Refresh();
+            tAccountsBindingSource.EndEdit();
+        }
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char c = e.KeyChar;
+            if((c < '0' || c > '9') && c != '\b')
+            {
+                MessageBox.Show("חייב ספרות בלבד");
+                e.Handled = true;
+            }
         }
     }
 }

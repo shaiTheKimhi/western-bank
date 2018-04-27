@@ -32,5 +32,13 @@ namespace WestrenBank
             d.ShowDialog();
             this.Close();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            DepositChecks f = new DepositChecks();
+            this.Hide();
+            f.ShowDialog();
+            this.Close();
+        }
     }
 }

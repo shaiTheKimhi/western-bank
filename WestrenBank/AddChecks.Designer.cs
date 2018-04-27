@@ -51,6 +51,24 @@
             ((System.ComponentModel.ISupportInitialize)(this.checksDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
+            // checkIDLabel
+            // 
+            checkIDLabel.AutoSize = true;
+            checkIDLabel.Location = new System.Drawing.Point(94, 11);
+            checkIDLabel.Name = "checkIDLabel";
+            checkIDLabel.Size = new System.Drawing.Size(55, 13);
+            checkIDLabel.TabIndex = 1;
+            checkIDLabel.Text = "Check ID:";
+            // 
+            // giverIDLabel
+            // 
+            giverIDLabel.AutoSize = true;
+            giverIDLabel.Location = new System.Drawing.Point(94, 37);
+            giverIDLabel.Name = "giverIDLabel";
+            giverIDLabel.Size = new System.Drawing.Size(49, 13);
+            giverIDLabel.TabIndex = 3;
+            giverIDLabel.Text = "Giver ID:";
+            // 
             // bankDBDataSet
             // 
             this.bankDBDataSet.DataSetName = "BankDBDataSet";
@@ -116,15 +134,6 @@
             this.dataGridViewCheckBoxColumn1.HeaderText = "IsValid";
             this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
             // 
-            // checkIDLabel
-            // 
-            checkIDLabel.AutoSize = true;
-            checkIDLabel.Location = new System.Drawing.Point(94, 11);
-            checkIDLabel.Name = "checkIDLabel";
-            checkIDLabel.Size = new System.Drawing.Size(55, 13);
-            checkIDLabel.TabIndex = 1;
-            checkIDLabel.Text = "Check ID:";
-            // 
             // checkIDTextBox
             // 
             this.checkIDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.checksBindingSource, "CheckID", true));
@@ -133,15 +142,6 @@
             this.checkIDTextBox.Size = new System.Drawing.Size(104, 20);
             this.checkIDTextBox.TabIndex = 2;
             // 
-            // giverIDLabel
-            // 
-            giverIDLabel.AutoSize = true;
-            giverIDLabel.Location = new System.Drawing.Point(94, 37);
-            giverIDLabel.Name = "giverIDLabel";
-            giverIDLabel.Size = new System.Drawing.Size(49, 13);
-            giverIDLabel.TabIndex = 3;
-            giverIDLabel.Text = "Giver ID:";
-            // 
             // giverIDTextBox
             // 
             this.giverIDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.checksBindingSource, "GiverID", true));
@@ -149,15 +149,6 @@
             this.giverIDTextBox.Name = "giverIDTextBox";
             this.giverIDTextBox.Size = new System.Drawing.Size(104, 20);
             this.giverIDTextBox.TabIndex = 4;
-            // 
-            // isValidLabel
-            // 
-            isValidLabel.AutoSize = true;
-            isValidLabel.Location = new System.Drawing.Point(94, 65);
-            isValidLabel.Name = "isValidLabel";
-            isValidLabel.Size = new System.Drawing.Size(44, 13);
-            isValidLabel.TabIndex = 5;
-            isValidLabel.Text = "Is Valid:";
             // 
             // isValidCheckBox
             // 
@@ -168,6 +159,15 @@
             this.isValidCheckBox.TabIndex = 6;
             this.isValidCheckBox.Text = "checkBox1";
             this.isValidCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // isValidLabel
+            // 
+            isValidLabel.AutoSize = true;
+            isValidLabel.Location = new System.Drawing.Point(94, 65);
+            isValidLabel.Name = "isValidLabel";
+            isValidLabel.Size = new System.Drawing.Size(44, 13);
+            isValidLabel.TabIndex = 5;
+            isValidLabel.Text = "Is Valid:";
             // 
             // AddChecks
             // 

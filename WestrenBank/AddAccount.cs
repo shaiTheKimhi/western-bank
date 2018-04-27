@@ -13,6 +13,7 @@ namespace WestrenBank
     public partial class AddAccount : Form
     {
         bool IsNew = false;
+        public string accountID = "";
         public AddAccount()
         {
             InitializeComponent();
@@ -35,7 +36,13 @@ namespace WestrenBank
 
         private void button1_Click(object sender, EventArgs e)
         {
+            button7.Visible = !button7.Visible;
+
+            accountID = (int.Parse(tAccountsDataGridView.Rows[tAccountsDataGridView.Rows.Count - 2].Cells[0].FormattedValue.ToString())+1).ToString();
+            
+
             tAccountsBindingSource.AddNew();
+            accountIDTextBox.Text = accountID;
             button1.Enabled = false;
             button2.Enabled = true;
 
@@ -52,17 +59,18 @@ namespace WestrenBank
                     return;
                 }
             }
+            accountIDTextBox.Text = accountID;
             tAccountsBindingSource.EndEdit();
             tAccountsTableAdapter.Update(this.bankDBDataSet.TAccounts);
             button2.Enabled = false;
             button1.Enabled = true;
             // Add checks to the account
             AddChecks f = new AddChecks();
-            f.accountID = accountIDTextBox.Text;
+            f.accountID = accountID;
             f.ShowDialog();
             // Add clients to the account
             AddClientsAccounts aca = new AddClientsAccounts();
-            aca.Aid = accountIDTextBox.Text;
+            aca.Aid = accountID;
             this.Hide();
             aca.ShowDialog();
             //aca.Aid = accountIDTextBox.Text;
@@ -95,6 +103,11 @@ namespace WestrenBank
                 e.Handled = true;
                 MessageBox.Show("enter digits only");
             }
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            tAccountsBindingSource.RemoveCurrent();
         }
     }
 }

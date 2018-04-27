@@ -15,6 +15,7 @@ namespace WestrenBank
         public string description = "";
         public string AccountID = null;
         public int money = 0;
+        public Form form;
         public TakeCommision()
         {
             InitializeComponent();
@@ -37,6 +38,19 @@ namespace WestrenBank
 
             AddCommision();
             TakeMoney();
+            if(form is Deposits)
+            {
+                form.Hide();
+                form.Close();
+                Deposits f = new Deposits();
+                f.ShowDialog();
+            }
+            else if(form is Transfers)
+            {
+                form.Close();
+                Transfers f = new Transfers();
+                f.ShowDialog();
+            }
             this.Close();
         }
 

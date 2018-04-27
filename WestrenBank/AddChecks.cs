@@ -43,6 +43,7 @@ namespace WestrenBank
         {
             checksBindingSource.AddNew();
             giverIDTextBox.Text = accountID;
+            isValidCheckBox.CheckState = CheckState.Checked;
             isValidCheckBox.Checked = true;
             checksBindingSource.EndEdit();
             checksTableAdapter.Update(bankDBDataSet.Checks);

@@ -83,6 +83,7 @@ namespace WestrenBank
 
         private void button6_Click(object sender, EventArgs e)
         {
+            clientIDTextBox.Text = comboBox1.SelectedValue.ToString();
             clientsAndAccountsBindingSource.EndEdit();
             //clientsAndAccountsTableAdapter.Update(this.bankDBDataSet.ClientsAndAccounts);
             clientsAndAccountsTableAdapter.Fill(this.bankDBDataSet.ClientsAndAccounts);
@@ -105,9 +106,7 @@ namespace WestrenBank
         private void button8_Click(object sender, EventArgs e)
         {
             AddClient ac = new AddClient();
-            this.Hide();
             ac.ShowDialog();
-            this.Close();
         }
 
         private void button9_Click(object sender, EventArgs e)

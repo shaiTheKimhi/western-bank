@@ -62,6 +62,8 @@ namespace WestrenBank
             button7.Visible = true;
             button6.Visible = false;
             checksBindingSource.AddNew();
+            isValidCheckBox.CheckState = CheckState.Checked;
+            isValidCheckBox.Checked = true;
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -125,8 +127,11 @@ namespace WestrenBank
 
         private void button8_Click(object sender, EventArgs e)
         {
-            checksBindingSource.EndEdit();
-            checksTableAdapter.Update(bankDBDataSet.Checks);
+            try {
+                checksBindingSource.EndEdit();
+                checksTableAdapter.Update(bankDBDataSet.Checks);
+            }
+            catch { ; }
         }
 
         private void button9_Click(object sender, EventArgs e)

@@ -54,6 +54,9 @@
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.currentTextBox = new System.Windows.Forms.TextBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.creditFrameTextBox = new System.Windows.Forms.TextBox();
+            this.accountIDTextBox = new System.Windows.Forms.TextBox();
             currentLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.bankDBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tAccountsBindingSource)).BeginInit();
@@ -61,6 +64,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.clientsAndAccountsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientsAndAccountsDataGridView)).BeginInit();
             this.SuspendLayout();
+            // 
+            // currentLabel
+            // 
+            currentLabel.AutoSize = true;
+            currentLabel.Location = new System.Drawing.Point(114, 80);
+            currentLabel.Name = "currentLabel";
+            currentLabel.Size = new System.Drawing.Size(0, 13);
+            currentLabel.TabIndex = 9;
             // 
             // bankDBDataSet
             // 
@@ -71,7 +82,9 @@
             // 
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.ChecksTableAdapter = null;
+            this.tableAdapterManager.ClientsAndAccountsTableAdapter = null;
             this.tableAdapterManager.CommissionsTableAdapter = null;
+            this.tableAdapterManager.Connection = null;
             this.tableAdapterManager.DepositsTableAdapter = null;
             this.tableAdapterManager.ExecutionTableAdapter = null;
             this.tableAdapterManager.InterestCollectionTableAdapter = null;
@@ -91,6 +104,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 2;
+            this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
             // label1
             // 
@@ -117,6 +131,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(100, 20);
             this.textBox2.TabIndex = 5;
+            this.textBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
             // label2
             // 
@@ -243,14 +258,6 @@
             this.dataGridViewTextBoxColumn8.HeaderText = "ClientID";
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
             // 
-            // currentLabel
-            // 
-            currentLabel.AutoSize = true;
-            currentLabel.Location = new System.Drawing.Point(114, 80);
-            currentLabel.Name = "currentLabel";
-            currentLabel.Size = new System.Drawing.Size(0, 13);
-            currentLabel.TabIndex = 9;
-            // 
             // currentTextBox
             // 
             this.currentTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tAccountsBindingSource, "current", true));
@@ -259,11 +266,42 @@
             this.currentTextBox.Size = new System.Drawing.Size(100, 20);
             this.currentTextBox.TabIndex = 10;
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "משיכה",
+            "הפקדה"});
+            this.comboBox1.Location = new System.Drawing.Point(387, 48);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 11;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // creditFrameTextBox
+            // 
+            this.creditFrameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tAccountsBindingSource, "creditFrame", true));
+            this.creditFrameTextBox.Location = new System.Drawing.Point(269, 80);
+            this.creditFrameTextBox.Name = "creditFrameTextBox";
+            this.creditFrameTextBox.Size = new System.Drawing.Size(100, 20);
+            this.creditFrameTextBox.TabIndex = 13;
+            // 
+            // accountIDTextBox
+            // 
+            this.accountIDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tAccountsBindingSource, "AccountID", true));
+            this.accountIDTextBox.Location = new System.Drawing.Point(57, 77);
+            this.accountIDTextBox.Name = "accountIDTextBox";
+            this.accountIDTextBox.Size = new System.Drawing.Size(100, 20);
+            this.accountIDTextBox.TabIndex = 14;
+            // 
             // Deposits
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(639, 595);
+            this.Controls.Add(this.accountIDTextBox);
+            this.Controls.Add(this.creditFrameTextBox);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(currentLabel);
             this.Controls.Add(this.currentTextBox);
             this.Controls.Add(this.clientsAndAccountsDataGridView);
@@ -314,5 +352,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.TextBox currentTextBox;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox creditFrameTextBox;
+        private System.Windows.Forms.TextBox accountIDTextBox;
     }
 }
