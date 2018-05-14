@@ -32,7 +32,6 @@
             System.Windows.Forms.Label currentLabel;
             this.bankDBDataSet = new WestrenBank.BankDBDataSet();
             this.tableAdapterManager = new WestrenBank.BankDBDataSetTableAdapters.TableAdapterManager();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -57,12 +56,15 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.creditFrameTextBox = new System.Windows.Forms.TextBox();
             this.accountIDTextBox = new System.Windows.Forms.TextBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.tAccountsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             currentLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.bankDBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tAccountsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tAccountsDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientsAndAccountsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientsAndAccountsDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tAccountsBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // currentLabel
@@ -97,14 +99,6 @@
             this.tableAdapterManager.TransfersTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = WestrenBank.BankDBDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.WithrawalsTableAdapter = null;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(163, 12);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 2;
-            this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
             // label1
             // 
@@ -294,11 +288,28 @@
             this.accountIDTextBox.Size = new System.Drawing.Size(100, 20);
             this.accountIDTextBox.TabIndex = 14;
             // 
+            // comboBox2
+            // 
+            this.comboBox2.DataSource = this.tAccountsBindingSource1;
+            this.comboBox2.DisplayMember = "username";
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(163, 14);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(100, 21);
+            this.comboBox2.TabIndex = 15;
+            this.comboBox2.ValueMember = "AccountID";
+            // 
+            // tAccountsBindingSource1
+            // 
+            this.tAccountsBindingSource1.DataMember = "TAccounts";
+            this.tAccountsBindingSource1.DataSource = this.bankDBDataSet;
+            // 
             // Deposits
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(639, 595);
+            this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.accountIDTextBox);
             this.Controls.Add(this.creditFrameTextBox);
             this.Controls.Add(this.comboBox1);
@@ -312,7 +323,6 @@
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
             this.Name = "Deposits";
             this.Text = "Deposits";
             this.Load += new System.EventHandler(this.Deposits_Load);
@@ -321,6 +331,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.tAccountsDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientsAndAccountsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientsAndAccountsDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tAccountsBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -330,7 +341,6 @@
 
         private BankDBDataSet bankDBDataSet;
         private BankDBDataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBox2;
@@ -355,5 +365,7 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.TextBox creditFrameTextBox;
         private System.Windows.Forms.TextBox accountIDTextBox;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.BindingSource tAccountsBindingSource1;
     }
 }

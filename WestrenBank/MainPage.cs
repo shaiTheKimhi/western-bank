@@ -53,5 +53,11 @@ namespace WestrenBank
             AddLoan2 l = new AddLoan2();
             l.ShowDialog();
         }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            Stocks f = new Stocks();
+            f.ShowDialog();
+        }
     }
 }

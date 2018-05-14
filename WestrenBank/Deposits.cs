@@ -45,8 +45,8 @@ namespace WestrenBank
             List<string> accounts = new List<string>();
             for(int i = 0; i < clientsAndAccountsDataGridView.Rows.Count - 2; i++)
             {
-                if (clientsAndAccountsDataGridView.Rows[i].Cells[1].FormattedValue.ToString() == textBox1.Text)
-                    accounts.Add(clientsAndAccountsDataGridView.Rows[i].Cells[0].FormattedValue.ToString());
+                /*if (clientsAndAccountsDataGridView.Rows[i].Cells[1].FormattedValue.ToString() == textBox1.Text)
+                    accounts.Add(clientsAndAccountsDataGridView.Rows[i].Cells[0].FormattedValue.ToString());*/
             }
             if(accounts.Count!=0)
             {
@@ -103,7 +103,7 @@ namespace WestrenBank
 
         private void button3_Click(object sender, EventArgs e)
         {
-            (tAccountsDataGridView.DataSource as BindingSource).Filter = "AccountID = " + textBox1.Text;
+            (tAccountsDataGridView.DataSource as BindingSource).Filter = "AccountID = " + comboBox2.SelectedValue.ToString();
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)

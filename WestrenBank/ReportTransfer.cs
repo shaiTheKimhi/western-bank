@@ -62,6 +62,7 @@ namespace WestrenBank
                 MessageBox.Show("הינך חייב להכניס שם לקוח שתדפיס העברות עבורו");
                 return;
             }
+            username = comboBox2.SelectedText;
             pageSetupDialog1.ShowDialog();
             printPreviewDialog1.ShowDialog();
         }
@@ -107,7 +108,7 @@ namespace WestrenBank
             e.Graphics.DrawString(str, new Font("Ariel", 15, FontStyle.Italic), Brushes.Black, new Point(100, h + 30));
             str = "העברות ";
             str += this.gr.Contains("ReciverAccountID") ? "נכנסות" : "יוצאות";
-            str += "- ";
+            str += ": ";
             str += money.ToString();
             e.Graphics.DrawString(str, new Font("Ariel", 15, FontStyle.Italic), Brushes.Black, new Point(100, h + 30 + LINE));
 

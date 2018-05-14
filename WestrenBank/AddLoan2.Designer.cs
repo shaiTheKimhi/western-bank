@@ -37,13 +37,12 @@
             System.Windows.Forms.Label returnedLabel;
             System.Windows.Forms.Label interestLabel;
             System.Windows.Forms.Label loanIDLabel1;
-            System.Windows.Forms.Label clientIDLabel;
             System.Windows.Forms.Label clientPartLabel;
+            System.Windows.Forms.Label accountIDLabel;
             this.bankDBDataSet = new WestrenBank.BankDBDataSet();
             this.loansBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.loansTableAdapter = new WestrenBank.BankDBDataSetTableAdapters.LoansTableAdapter();
             this.tableAdapterManager = new WestrenBank.BankDBDataSetTableAdapters.TableAdapterManager();
-            this.loansToClientsTableAdapter = new WestrenBank.BankDBDataSetTableAdapters.LoansToClientsTableAdapter();
             this.tAccountsTableAdapter = new WestrenBank.BankDBDataSetTableAdapters.TAccountsTableAdapter();
             this.loansDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,11 +52,6 @@
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.loansToClientsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.loansToClientsDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.loanIDTextBox = new System.Windows.Forms.TextBox();
             this.loanSumTextBox = new System.Windows.Forms.TextBox();
             this.loanStartDateDateTimePicker = new System.Windows.Forms.DateTimePicker();
@@ -65,9 +59,6 @@
             this.guarenteeIDTextBox = new System.Windows.Forms.TextBox();
             this.returnedCheckBox = new System.Windows.Forms.CheckBox();
             this.interestTextBox = new System.Windows.Forms.TextBox();
-            this.loanIDTextBox1 = new System.Windows.Forms.TextBox();
-            this.clientIDTextBox = new System.Windows.Forms.TextBox();
-            this.clientPartTextBox = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -84,6 +75,15 @@
             this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.currentTextBox = new System.Windows.Forms.TextBox();
             this.creditFrameTextBox = new System.Windows.Forms.TextBox();
+            this.loansToClientsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.loansToClientsTableAdapter = new WestrenBank.BankDBDataSetTableAdapters.LoansToClientsTableAdapter();
+            this.loansToClientsDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.loanIDTextBox1 = new System.Windows.Forms.TextBox();
+            this.clientPartTextBox = new System.Windows.Forms.TextBox();
+            this.accountIDTextBox = new System.Windows.Forms.TextBox();
             loanIDLabel = new System.Windows.Forms.Label();
             loanSumLabel = new System.Windows.Forms.Label();
             loanStartDateLabel = new System.Windows.Forms.Label();
@@ -92,15 +92,15 @@
             returnedLabel = new System.Windows.Forms.Label();
             interestLabel = new System.Windows.Forms.Label();
             loanIDLabel1 = new System.Windows.Forms.Label();
-            clientIDLabel = new System.Windows.Forms.Label();
             clientPartLabel = new System.Windows.Forms.Label();
+            accountIDLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.bankDBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.loansBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.loansDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.loansToClientsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.loansToClientsDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tAccountsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tAccountsDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.loansToClientsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.loansToClientsDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // loanIDLabel
@@ -169,29 +169,29 @@
             // loanIDLabel1
             // 
             loanIDLabel1.AutoSize = true;
-            loanIDLabel1.Location = new System.Drawing.Point(495, 320);
+            loanIDLabel1.Location = new System.Drawing.Point(512, 303);
             loanIDLabel1.Name = "loanIDLabel1";
             loanIDLabel1.Size = new System.Drawing.Size(48, 13);
-            loanIDLabel1.TabIndex = 16;
+            loanIDLabel1.TabIndex = 32;
             loanIDLabel1.Text = "Loan ID:";
-            // 
-            // clientIDLabel
-            // 
-            clientIDLabel.AutoSize = true;
-            clientIDLabel.Location = new System.Drawing.Point(495, 346);
-            clientIDLabel.Name = "clientIDLabel";
-            clientIDLabel.Size = new System.Drawing.Size(64, 13);
-            clientIDLabel.TabIndex = 18;
-            clientIDLabel.Text = "Account ID:";
             // 
             // clientPartLabel
             // 
             clientPartLabel.AutoSize = true;
-            clientPartLabel.Location = new System.Drawing.Point(495, 372);
+            clientPartLabel.Location = new System.Drawing.Point(512, 329);
             clientPartLabel.Name = "clientPartLabel";
             clientPartLabel.Size = new System.Drawing.Size(58, 13);
-            clientPartLabel.TabIndex = 20;
+            clientPartLabel.TabIndex = 34;
             clientPartLabel.Text = "Client Part:";
+            // 
+            // accountIDLabel
+            // 
+            accountIDLabel.AutoSize = true;
+            accountIDLabel.Location = new System.Drawing.Point(512, 355);
+            accountIDLabel.Name = "accountIDLabel";
+            accountIDLabel.Size = new System.Drawing.Size(64, 13);
+            accountIDLabel.TabIndex = 36;
+            accountIDLabel.Text = "Account ID:";
             // 
             // bankDBDataSet
             // 
@@ -217,7 +217,7 @@
             this.tableAdapterManager.ExecutionTableAdapter = null;
             this.tableAdapterManager.InterestCollectionTableAdapter = null;
             this.tableAdapterManager.LoansTableAdapter = this.loansTableAdapter;
-            this.tableAdapterManager.LoansToClientsTableAdapter = this.loansToClientsTableAdapter;
+            this.tableAdapterManager.LoansToClientsTableAdapter = null;
             this.tableAdapterManager.StocksAndAccountsTableAdapter = null;
             this.tableAdapterManager.StocksTableAdapter = null;
             this.tableAdapterManager.TAccountsTableAdapter = this.tAccountsTableAdapter;
@@ -225,10 +225,6 @@
             this.tableAdapterManager.TransfersTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = WestrenBank.BankDBDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.WithrawalsTableAdapter = null;
-            // 
-            // loansToClientsTableAdapter
-            // 
-            this.loansToClientsTableAdapter.ClearBeforeFill = true;
             // 
             // tAccountsTableAdapter
             // 
@@ -294,43 +290,6 @@
             this.dataGridViewTextBoxColumn6.HeaderText = "Interest";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             // 
-            // loansToClientsBindingSource
-            // 
-            this.loansToClientsBindingSource.DataMember = "LoansToClients";
-            this.loansToClientsBindingSource.DataSource = this.bankDBDataSet;
-            // 
-            // loansToClientsDataGridView
-            // 
-            this.loansToClientsDataGridView.AutoGenerateColumns = false;
-            this.loansToClientsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.loansToClientsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn7,
-            this.dataGridViewTextBoxColumn8,
-            this.dataGridViewTextBoxColumn9});
-            this.loansToClientsDataGridView.DataSource = this.loansToClientsBindingSource;
-            this.loansToClientsDataGridView.Location = new System.Drawing.Point(12, 238);
-            this.loansToClientsDataGridView.Name = "loansToClientsDataGridView";
-            this.loansToClientsDataGridView.Size = new System.Drawing.Size(277, 220);
-            this.loansToClientsDataGridView.TabIndex = 1;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "LoanID";
-            this.dataGridViewTextBoxColumn7.HeaderText = "LoanID";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "ClientID";
-            this.dataGridViewTextBoxColumn8.HeaderText = "ClientID";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            this.dataGridViewTextBoxColumn9.DataPropertyName = "ClientPart";
-            this.dataGridViewTextBoxColumn9.HeaderText = "ClientPart";
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            // 
             // loanIDTextBox
             // 
             this.loanIDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.loansBindingSource, "LoanID", true));
@@ -346,6 +305,7 @@
             this.loanSumTextBox.Name = "loanSumTextBox";
             this.loanSumTextBox.Size = new System.Drawing.Size(200, 20);
             this.loanSumTextBox.TabIndex = 5;
+            this.loanSumTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.interestTextBox_KeyPress);
             // 
             // loanStartDateDateTimePicker
             // 
@@ -388,30 +348,7 @@
             this.interestTextBox.Name = "interestTextBox";
             this.interestTextBox.Size = new System.Drawing.Size(200, 20);
             this.interestTextBox.TabIndex = 15;
-            // 
-            // loanIDTextBox1
-            // 
-            this.loanIDTextBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.loansToClientsBindingSource, "LoanID", true));
-            this.loanIDTextBox1.Location = new System.Drawing.Point(565, 317);
-            this.loanIDTextBox1.Name = "loanIDTextBox1";
-            this.loanIDTextBox1.Size = new System.Drawing.Size(100, 20);
-            this.loanIDTextBox1.TabIndex = 17;
-            // 
-            // clientIDTextBox
-            // 
-            this.clientIDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.loansToClientsBindingSource, "ClientID", true));
-            this.clientIDTextBox.Location = new System.Drawing.Point(565, 343);
-            this.clientIDTextBox.Name = "clientIDTextBox";
-            this.clientIDTextBox.Size = new System.Drawing.Size(100, 20);
-            this.clientIDTextBox.TabIndex = 19;
-            // 
-            // clientPartTextBox
-            // 
-            this.clientPartTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.loansToClientsBindingSource, "ClientPart", true));
-            this.clientPartTextBox.Location = new System.Drawing.Point(565, 369);
-            this.clientPartTextBox.Name = "clientPartTextBox";
-            this.clientPartTextBox.Size = new System.Drawing.Size(100, 20);
-            this.clientPartTextBox.TabIndex = 21;
+            this.interestTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.interestTextBox_KeyPress);
             // 
             // button1
             // 
@@ -490,7 +427,7 @@
             this.tAccountsDataGridView.DataSource = this.tAccountsBindingSource;
             this.tAccountsDataGridView.Location = new System.Drawing.Point(12, 464);
             this.tAccountsDataGridView.Name = "tAccountsDataGridView";
-            this.tAccountsDataGridView.Size = new System.Drawing.Size(300, 220);
+            this.tAccountsDataGridView.Size = new System.Drawing.Size(300, 70);
             this.tAccountsDataGridView.TabIndex = 28;
             // 
             // dataGridViewTextBoxColumn10
@@ -532,7 +469,7 @@
             // currentTextBox
             // 
             this.currentTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tAccountsBindingSource, "current", true));
-            this.currentTextBox.Location = new System.Drawing.Point(423, 552);
+            this.currentTextBox.Location = new System.Drawing.Point(335, 464);
             this.currentTextBox.Name = "currentTextBox";
             this.currentTextBox.Size = new System.Drawing.Size(100, 20);
             this.currentTextBox.TabIndex = 30;
@@ -540,17 +477,89 @@
             // creditFrameTextBox
             // 
             this.creditFrameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tAccountsBindingSource, "creditFrame", true));
-            this.creditFrameTextBox.Location = new System.Drawing.Point(423, 578);
+            this.creditFrameTextBox.Location = new System.Drawing.Point(335, 490);
             this.creditFrameTextBox.Name = "creditFrameTextBox";
             this.creditFrameTextBox.Size = new System.Drawing.Size(100, 20);
             this.creditFrameTextBox.TabIndex = 32;
+            // 
+            // loansToClientsBindingSource
+            // 
+            this.loansToClientsBindingSource.DataMember = "LoansToClients";
+            this.loansToClientsBindingSource.DataSource = this.bankDBDataSet;
+            // 
+            // loansToClientsTableAdapter
+            // 
+            this.loansToClientsTableAdapter.ClearBeforeFill = true;
+            // 
+            // loansToClientsDataGridView
+            // 
+            this.loansToClientsDataGridView.AutoGenerateColumns = false;
+            this.loansToClientsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.loansToClientsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn9,
+            this.dataGridViewTextBoxColumn16});
+            this.loansToClientsDataGridView.DataSource = this.loansToClientsBindingSource;
+            this.loansToClientsDataGridView.Location = new System.Drawing.Point(12, 238);
+            this.loansToClientsDataGridView.Name = "loansToClientsDataGridView";
+            this.loansToClientsDataGridView.Size = new System.Drawing.Size(300, 220);
+            this.loansToClientsDataGridView.TabIndex = 32;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "LoanID";
+            this.dataGridViewTextBoxColumn7.HeaderText = "LoanID";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "ClientPart";
+            this.dataGridViewTextBoxColumn9.HeaderText = "ClientPart";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            // 
+            // dataGridViewTextBoxColumn16
+            // 
+            this.dataGridViewTextBoxColumn16.DataPropertyName = "AccountID";
+            this.dataGridViewTextBoxColumn16.HeaderText = "AccountID";
+            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
+            // 
+            // loanIDTextBox1
+            // 
+            this.loanIDTextBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.loansToClientsBindingSource, "LoanID", true));
+            this.loanIDTextBox1.Location = new System.Drawing.Point(582, 300);
+            this.loanIDTextBox1.Name = "loanIDTextBox1";
+            this.loanIDTextBox1.Size = new System.Drawing.Size(100, 20);
+            this.loanIDTextBox1.TabIndex = 33;
+            // 
+            // clientPartTextBox
+            // 
+            this.clientPartTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.loansToClientsBindingSource, "ClientPart", true));
+            this.clientPartTextBox.Location = new System.Drawing.Point(582, 326);
+            this.clientPartTextBox.Name = "clientPartTextBox";
+            this.clientPartTextBox.Size = new System.Drawing.Size(100, 20);
+            this.clientPartTextBox.TabIndex = 35;
+            // 
+            // accountIDTextBox
+            // 
+            this.accountIDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.loansToClientsBindingSource, "AccountID", true));
+            this.accountIDTextBox.Location = new System.Drawing.Point(582, 352);
+            this.accountIDTextBox.Name = "accountIDTextBox";
+            this.accountIDTextBox.Size = new System.Drawing.Size(100, 20);
+            this.accountIDTextBox.TabIndex = 37;
             // 
             // AddLoan2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(721, 741);
+            this.ClientSize = new System.Drawing.Size(788, 555);
+            this.Controls.Add(loanIDLabel1);
+            this.Controls.Add(this.loanIDTextBox1);
+            this.Controls.Add(clientPartLabel);
+            this.Controls.Add(this.clientPartTextBox);
+            this.Controls.Add(accountIDLabel);
+            this.Controls.Add(this.accountIDTextBox);
+            this.Controls.Add(this.loansToClientsDataGridView);
             this.Controls.Add(this.creditFrameTextBox);
             this.Controls.Add(this.currentTextBox);
             this.Controls.Add(this.tAccountsDataGridView);
@@ -560,12 +569,6 @@
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(loanIDLabel1);
-            this.Controls.Add(this.loanIDTextBox1);
-            this.Controls.Add(clientIDLabel);
-            this.Controls.Add(this.clientIDTextBox);
-            this.Controls.Add(clientPartLabel);
-            this.Controls.Add(this.clientPartTextBox);
             this.Controls.Add(loanIDLabel);
             this.Controls.Add(this.loanIDTextBox);
             this.Controls.Add(loanSumLabel);
@@ -580,7 +583,6 @@
             this.Controls.Add(this.returnedCheckBox);
             this.Controls.Add(interestLabel);
             this.Controls.Add(this.interestTextBox);
-            this.Controls.Add(this.loansToClientsDataGridView);
             this.Controls.Add(this.loansDataGridView);
             this.Name = "AddLoan2";
             this.Text = "AddLoan2";
@@ -588,10 +590,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.bankDBDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.loansBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.loansDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.loansToClientsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.loansToClientsDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tAccountsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tAccountsDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.loansToClientsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.loansToClientsDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -611,12 +613,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private BankDBDataSetTableAdapters.LoansToClientsTableAdapter loansToClientsTableAdapter;
-        private System.Windows.Forms.BindingSource loansToClientsBindingSource;
-        private System.Windows.Forms.DataGridView loansToClientsDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private System.Windows.Forms.TextBox loanIDTextBox;
         private System.Windows.Forms.TextBox loanSumTextBox;
         private System.Windows.Forms.DateTimePicker loanStartDateDateTimePicker;
@@ -624,9 +621,6 @@
         private System.Windows.Forms.TextBox guarenteeIDTextBox;
         private System.Windows.Forms.CheckBox returnedCheckBox;
         private System.Windows.Forms.TextBox interestTextBox;
-        private System.Windows.Forms.TextBox loanIDTextBox1;
-        private System.Windows.Forms.TextBox clientIDTextBox;
-        private System.Windows.Forms.TextBox clientPartTextBox;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private BankDBDataSetTableAdapters.TAccountsTableAdapter tAccountsTableAdapter;
@@ -644,5 +638,14 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
         private System.Windows.Forms.TextBox currentTextBox;
         private System.Windows.Forms.TextBox creditFrameTextBox;
+        private System.Windows.Forms.BindingSource loansToClientsBindingSource;
+        private BankDBDataSetTableAdapters.LoansToClientsTableAdapter loansToClientsTableAdapter;
+        private System.Windows.Forms.DataGridView loansToClientsDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
+        private System.Windows.Forms.TextBox loanIDTextBox1;
+        private System.Windows.Forms.TextBox clientPartTextBox;
+        private System.Windows.Forms.TextBox accountIDTextBox;
     }
 }

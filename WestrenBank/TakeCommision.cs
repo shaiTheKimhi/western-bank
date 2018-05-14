@@ -65,7 +65,7 @@ namespace WestrenBank
             clientIDTextBox.Text = AccountID;
             descriptionTextBox.Text = description;
             commissionSizeTextBox.Text = money.ToString();
-            commissionDateDateTimePicker.Value = DateTime.Now;
+            commissionDateDateTimePicker.Value = DateTime.Today;
             commissionsBindingSource.EndEdit();
             commissionsTableAdapter.Update(bankDBDataSet.Commissions);
         }

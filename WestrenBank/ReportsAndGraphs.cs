@@ -32,5 +32,53 @@ namespace WestrenBank
             rt.ShowDialog();
             this.Close();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            AccountDebts f = new AccountDebts();
+            this.Hide();
+            f.ShowDialog();
+            f.Close();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            LoansGraph f = new LoansGraph();
+            this.Hide();
+            f.ShowDialog();
+            this.Close();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            LoansClientsGraph f = new LoansClientsGraph();
+            this.Hide();
+            f.ShowDialog();
+            this.Close();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            ComissionsGraph f = new ComissionsGraph();
+            this.Hide();
+            f.ShowDialog();
+            this.Close();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            AccountLoans f = new AccountLoans();
+            this.Hide();
+            f.ShowDialog();
+            this.Close();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            CommissionsReport f = new CommissionsReport();
+            this.Hide();
+            f.ShowDialog();
+            this.Close();
+        }
     }
 }
